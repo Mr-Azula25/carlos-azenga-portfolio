@@ -1,0 +1,35 @@
+ICS 2216 LAB 2 — SQL QUERY OUTPUTS
+Carlos Azenga | BSc Environmental Science | JKUAT
+
+1. Show my full profile
+SELECT * FROM profile;
+profile_id | full_name | programme | bio
+1 | Carlos Azenga | BSc Environmental Science | Environmental Science student at JKUAT interested in conservation, sustainable development and learning how people can protect natural resources. I enjoy football, documentaries and R&B music.
+
+2. My movies in rank order
+SELECT title, release_year FROM movie ORDER BY my_rank;
+title | release_year
+Attack on Titan | 2013
+Death Note | 2006
+The Originals | 2013
+Money Heist | 2017
+Breaking Bad | 2008
+
+3. Only movies released after 2010
+SELECT title FROM movie WHERE release_year > 2010;
+title
+Attack on Titan
+The Originals
+Money Heist
+
+4. My name with each of my hobbies
+SELECT profile.full_name, hobby.hobby_name FROM profile JOIN hobby ON hobby.profile_id = profile.profile_id;
+full_name | hobby_name
+Carlos Azenga | Playing football
+Carlos Azenga | Watching documentaries
+Carlos Azenga | Listening to R&B
+
+5. How many skills do I list?
+SELECT COUNT(*) FROM skill;
+COUNT(*)
+5
